@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	get_razor(const char *str)
+int get_razor(const char *str)
 {
 	int res;
 
@@ -20,26 +20,28 @@ int	get_razor(const char *str)
 	while (*str != '\0')
 	{
 		if (!ft_isdigit(*str) || !ft_isdigit(*(str + 1)))
-			break ;
+			break;
 		str++;
 		res *= 10;
 	}
 	return (res);
 }
 
-int	ft_atoi(const char *str)
+int ft_atoi(const char *str)
 {
-	int				result;
-	int				razor;
-	int				minus;
+	int result;
+	int razor;
+	int minus;
 
 	result = 0;
-	razor = 1;
+	razor = 0;
 	minus = 1;
 	if (*str == '-')
 	{
 		minus *= -1;
 		str++;
+		while (*str == '0')
+			str++;
 	}
 	if (!ft_isdigit(*str))
 		return (result);

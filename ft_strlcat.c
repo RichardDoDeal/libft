@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamahali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 12:58:07 by mamahali          #+#    #+#             */
-/*   Updated: 2020/10/30 12:58:10 by mamahali         ###   ########.fr       */
+/*   Created: 2020/10/30 16:30:55 by mamahali          #+#    #+#             */
+/*   Updated: 2020/10/30 16:30:58 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
+#include "libft.h"
 
-void *ft_memccpy(void *dst, const void *src, int c, size_t n)
+size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char *dest;
+	char *end_dest;
 	char *source;
+	int src_count;
+	size_t res;
 
-	dest = (char *)dst;
 	source = (char *)src;
-	while (n >= 0)
+	src_count = (int)ft_strlen(source);
+	end_dest = dst;
+	res = ft_strlen(dst) + src_count;
+	while(*end_dest)
+		end_dest++;
+	while ((int)dstsize >= src_count && *source)
 	{
-		if (*dest == (char)c)
-			return (dest + 1);
-		*dest = *source;
-		dest++;
+		*end_dest = *source;
+		end_dest++;
 		source++;
-		n--;
+		src_count++;
 	}
-	return (NULL);
+	*end_dest = '\0';
+	return (res);
 }

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamahali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 12:58:07 by mamahali          #+#    #+#             */
-/*   Updated: 2020/10/30 12:58:10 by mamahali         ###   ########.fr       */
+/*   Created: 2020/10/30 14:40:08 by mamahali          #+#    #+#             */
+/*   Updated: 2020/10/30 14:40:09 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 
-void *ft_memccpy(void *dst, const void *src, int c, size_t n)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char *dest;
-	char *source;
+	char *src1;
+	char *src2;
 
-	dest = (char *)dst;
-	source = (char *)src;
-	while (n >= 0)
+	src1 = (char *)s1;
+	src2 = (char *)s2;
+	while (n > 0)
 	{
-		if (*dest == (char)c)
-			return (dest + 1);
-		*dest = *source;
-		dest++;
-		source++;
+		if (*src1 != *src2)
+			return (*src1 - *src2);
 		n--;
+		src1++;
+		src2++;
 	}
-	return (NULL);
+	return (0);
 }
+

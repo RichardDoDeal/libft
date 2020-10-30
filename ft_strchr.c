@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamahali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 12:58:07 by mamahali          #+#    #+#             */
-/*   Updated: 2020/10/30 12:58:10 by mamahali         ###   ########.fr       */
+/*   Created: 2020/10/30 19:26:28 by mamahali          #+#    #+#             */
+/*   Updated: 2020/10/30 19:26:29 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 
-void *ft_memccpy(void *dst, const void *src, int c, size_t n)
+char *ft_strchr(const char *s, int c)
 {
-	char *dest;
-	char *source;
+	char *src;
 
-	dest = (char *)dst;
-	source = (char *)src;
-	while (n >= 0)
+	src = (char *)s;
+	while (1)
 	{
-		if (*dest == (char)c)
-			return (dest + 1);
-		*dest = *source;
-		dest++;
-		source++;
-		n--;
+		if (*src == c)
+			return (src);
+		if (*src == '\0')
+			break ;
+		src++;
 	}
 	return (NULL);
 }
+
