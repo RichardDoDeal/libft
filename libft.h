@@ -12,7 +12,7 @@
 
 #ifndef FT_LIBFT_H
 #define FT_LIBFT_H
-#include <string.h>
+#include <stdlib.h>
 
 void 	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -36,4 +36,5 @@ int		ft_isprint(int c);
 size_t	ft_strlen(char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_isspace(int c);
 #endif

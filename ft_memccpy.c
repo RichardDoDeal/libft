@@ -19,13 +19,15 @@ void *ft_memccpy(void *dst, const void *src, int c, size_t n)
 
 	dest = (char *)dst;
 	source = (char *)src;
-	while (n >= 0)
+	while (1)
 	{
 		if (*dest == (char)c)
 			return (dest + 1);
 		*dest = *source;
 		dest++;
 		source++;
+		if(n == 0)
+			break ;
 		n--;
 	}
 	return (NULL);

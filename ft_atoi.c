@@ -11,46 +11,56 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int get_razor(const char *str)
+int main(void)
 {
-	int res;
+	char *s = "-99999999999999999999999999";
+	printf("%d\n", atoi(s));
+	printf("%d\n", ft_atoi(s));
 
-	res = 1;
+}
+
+char	*search_end(const char *str)
+{
+	char *res;
+
+	res = (char *)str;
 	while (*str != '\0')
 	{
 		if (!ft_isdigit(*str) || !ft_isdigit(*(str + 1)))
-			break;
+			break ;
 		str++;
-		res *= 10;
+		res++;
 	}
 	return (res);
 }
 
-int ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-	int result;
-	int razor;
-	int minus;
+	size_t		result;
+	char	*end;
+	int		minus;
 
 	result = 0;
-	razor = 0;
+	end = (char *)str;
 	minus = 1;
-	if (*str == '-')
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		minus *= -1;
+		minus = *str == '-' ? minus * -1 : minus;
 		str++;
 		while (*str == '0')
 			str++;
 	}
 	if (!ft_isdigit(*str))
 		return (result);
-	razor = get_razor(str);
-	while (razor > 0)
+	end = search_end(str);
+	while (end >= str)
 	{
-		result += (*str - 48) * razor * minus;
-		razor /= 10;
-		str++;
+		result += (*end-- - 48) * minus;
+		minus *= 10;
 	}
 	return (result);
 }
