@@ -41,3 +41,4 @@ libft-unit-test/src/sandbox.c
 libft-unit-test/src/signal.c
 libft-unit-test/src/test_functions.c
 libft.a
+test.c

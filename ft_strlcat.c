@@ -12,6 +12,8 @@
 
 #include <stdlib.h>
 #include "libft.h"
+#include <stdio.h>
+#include <bsd/string.h>
 
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -26,7 +28,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	res = ft_strlen(dst) + src_count;
 	while(*end_dest)
 		end_dest++;
-	while ((int)dstsize >= src_count && *source)
+	while ((int)dstsize > src_count && *source)
 	{
 		*end_dest = *source;
 		end_dest++;
@@ -36,3 +38,20 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	*end_dest = '\0';
 	return (res);
 }
+/*
+int main(void)
+{
+	char    *dest;
+	int             dest_len;
+
+	dest_len = 15;
+	if (!(dest = (char *)malloc(sizeof(*dest) * dest_len)))
+		return (0);
+	memset(dest, 0, dest_len);
+	memset(dest, 'r', 6);
+
+	printf("%lu\n", ft_strlcat(dest, "lorem ipsum", 15));
+	printf("%lu\n", strlcat(dest, "lorem ipsum", 15));
+	free(dest);
+}
+ */

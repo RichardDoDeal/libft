@@ -13,14 +13,6 @@
 #include "libft.h"
 #include <stdio.h>
 
-int main(void)
-{
-	char *s = "-99999999999999999999999999";
-	printf("%d\n", atoi(s));
-	printf("%d\n", ft_atoi(s));
-
-}
-
 char	*search_end(const char *str)
 {
 	char *res;
