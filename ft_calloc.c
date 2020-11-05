@@ -6,12 +6,15 @@ void *ft_calloc(size_t nmemb, size_t size)
 {
 	void	*res;
 
-	if (!nmemb || !size)
-		return (NULL);
-	//overflow len check are need
+	res = NULL;
+	if (nmemb == 0 || size == 0)
+	{
+		nmemb = 1;
+		size = 1;
+	}
 	res = malloc(nmemb * size);
 	if (!res)
 		return (NULL);
-	ft_memset(res, 0, nmemb * size);
+	res = ft_memset(res, 0, nmemb * size);
 	return (res);
 }

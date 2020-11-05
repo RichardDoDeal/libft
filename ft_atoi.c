@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*search_end(const char *str)
 {
@@ -28,6 +27,14 @@ char	*search_end(const char *str)
 	return (res);
 }
 
+int	check_space(int c)
+{
+	if(c == '\f' || c == '\n' || c == '\r'
+	   || c == '\t' || c == '\v' || c == ' ')
+		return (1);
+	return (0);
+}
+
 int		ft_atoi(const char *str)
 {
 	size_t		result;
@@ -37,7 +44,7 @@ int		ft_atoi(const char *str)
 	result = 0;
 	end = (char *)str;
 	minus = 1;
-	while (ft_isspace(*str))
+	while (check_space(*str))
 		str++;
 	if (*str == '-' || *str == '+')
 	{

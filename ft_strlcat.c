@@ -13,45 +13,31 @@
 #include <stdlib.h>
 #include "libft.h"
 #include <stdio.h>
-#include <bsd/string.h>
 
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char *end_dest;
 	char *source;
-	int src_count;
-	size_t res;
+	size_t src_count;
+	size_t dst_count;
+	size_t res_count;
 
 	source = (char *)src;
-	src_count = (int)ft_strlen(source);
-	end_dest = dst;
-	res = ft_strlen(dst) + src_count;
-	while(*end_dest)
-		end_dest++;
-	while ((int)dstsize > src_count && *source)
+	src_count = ft_strlen(source);
+	dst_count = ft_strlen(dst);
+	res_count = (dstsize < dst_count ? dstsize : dst_count) + src_count;
+	while(*dst)
+		dst++;
+	while (dstsize - dst_count - 1 <= dstsize && *source)
 	{
-		*end_dest = *source;
-		end_dest++;
+		if (dstsize == dst_count + 1)
+			break ;
+		*dst = *source;
+		dst++;
 		source++;
-		src_count++;
+		dst_count++;
 	}
-	*end_dest = '\0';
-	return (res);
+	*dst = '\0';
+	//printf("a|%lu|\n",dst_count);
+	//printf("|%lu|\n", dstsize < dst_count ? dstsize : dst_count);
+	return (res_count);
 }
-/*
-int main(void)
-{
-	char    *dest;
-	int             dest_len;
-
-	dest_len = 15;
-	if (!(dest = (char *)malloc(sizeof(*dest) * dest_len)))
-		return (0);
-	memset(dest, 0, dest_len);
-	memset(dest, 'r', 6);
-
-	printf("%lu\n", ft_strlcat(dest, "lorem ipsum", 15));
-	printf("%lu\n", strlcat(dest, "lorem ipsum", 15));
-	free(dest);
-}
- */
