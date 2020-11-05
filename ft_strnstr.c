@@ -6,14 +6,13 @@
 /*   By: mamahali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:57:16 by mamahali          #+#    #+#             */
-/*   Updated: 2020/10/30 19:57:18 by mamahali         ###   ########.fr       */
+/*   Updated: 2020/11/05 19:09:55 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int search_need(const char *hay, char *nd, size_t hay_pos)
+int		search_need(const char *hay, char *nd, size_t hay_pos)
 {
 	size_t inner_pos;
 
@@ -21,7 +20,7 @@ int search_need(const char *hay, char *nd, size_t hay_pos)
 	while (*nd)
 	{
 		if (*nd != *(hay + hay_pos + inner_pos))
-			break;
+			break ;
 		inner_pos++;
 		nd++;
 		if (!*nd)
@@ -30,10 +29,10 @@ int search_need(const char *hay, char *nd, size_t hay_pos)
 	return (0);
 }
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char 	*hay;
-	char 	*need;
+	char	*hay;
+	char	*need;
 	size_t	hay_pos;
 	size_t	need_len;
 
@@ -47,8 +46,8 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (hay);
 	while (*(hay + hay_pos) && hay_pos + need_len <= len)
 	{
-		if(search_need(hay, need,hay_pos))
-				return (hay + hay_pos);
+		if (search_need(hay, need, hay_pos))
+			return (hay + hay_pos);
 		hay_pos++;
 	}
 	return (NULL);

@@ -6,11 +6,11 @@
 /*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 11:56:07 by mamahali          #+#    #+#             */
-/*   Updated: 2020/10/28 19:46:06 by mamahali         ###   ########.fr       */
+/*   Updated: 2020/11/05 18:37:10 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	return (((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) ? 1 : 0);
 }

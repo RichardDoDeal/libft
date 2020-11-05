@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/05 18:54:06 by mamahali          #+#    #+#             */
+/*   Updated: 2020/11/05 19:26:25 by mamahali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int	check_symbol(char c, char *set)
+int		check_symbol(char c, char *set)
 {
 	while (*set)
 	{
@@ -13,7 +23,7 @@ int	check_symbol(char c, char *set)
 	return (0);
 }
 
-char *go_end(char *start, size_t *len)
+char	*go_end(char *start, size_t *len)
 {
 	while (*start)
 	{
@@ -24,15 +34,13 @@ char *go_end(char *start, size_t *len)
 	return (start);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *start;
-	size_t end_s;
-	size_t *len_p;
-	size_t len;
+	char	*start;
+	size_t	end_s;
+	size_t	len;
 
 	len = 0;
-	len_p = &len;
 	end_s = 0;
 	if (s1 == NULL || set == NULL)
 		return (NULL);
@@ -40,15 +48,15 @@ char *ft_strtrim(char const *s1, char const *set)
 	while (*start)
 	{
 		if (!check_symbol(*start, (char *)set))
-			break;
+			break ;
 		start++;
 		end_s++;
 	}
-	start = go_end(start, len_p);
+	start = go_end(start, &len);
 	while (start >= s1 + end_s)
 	{
-		if(!check_symbol(*start, (char *)set))
-			break;
+		if (!check_symbol(*start, (char *)set))
+			break ;
 		start--;
 		len--;
 	}

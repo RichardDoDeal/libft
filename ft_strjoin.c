@@ -1,12 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/05 18:53:28 by mamahali          #+#    #+#             */
+/*   Updated: 2020/11/05 18:53:33 by mamahali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *res;
-	size_t len;
+	char	*res;
+	size_t	len;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -19,4 +28,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(res, s2, len);
 	return (res);
 }
-

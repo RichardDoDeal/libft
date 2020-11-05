@@ -6,11 +6,11 @@
 /*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:36:41 by mamahali          #+#    #+#             */
-/*   Updated: 2020/10/28 14:38:06 by mamahali         ###   ########.fr       */
+/*   Updated: 2020/11/05 18:53:55 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	return ((c >= 65 && c <= 90) ? c + 32 : c);
 }

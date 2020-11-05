@@ -6,11 +6,11 @@
 /*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:28:12 by mamahali          #+#    #+#             */
-/*   Updated: 2020/10/28 20:00:17 by mamahali         ###   ########.fr       */
+/*   Updated: 2020/11/05 18:37:32 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return ((c >= 48 && c <= 57) ? 1 : 0);
 }

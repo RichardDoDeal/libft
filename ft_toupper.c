@@ -6,11 +6,11 @@
 /*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:14:08 by mamahali          #+#    #+#             */
-/*   Updated: 2020/10/28 14:37:31 by mamahali         ###   ########.fr       */
+/*   Updated: 2020/11/05 18:53:51 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	return ((c >= 97 && c <= 122) ? c - 32 : c);
 }

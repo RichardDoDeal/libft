@@ -6,19 +6,19 @@
 /*   By: mamahali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 12:58:07 by mamahali          #+#    #+#             */
-/*   Updated: 2020/10/30 12:58:10 by mamahali         ###   ########.fr       */
+/*   Updated: 2020/11/05 18:57:33 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void *ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	char *dest;
 	char *source;
 	char sb;
 
-	if((dst == NULL && src == NULL) || n == 0)
+	if ((dst == NULL && src == NULL) || n == 0)
 		return (NULL);
 	sb = (char)c;
 	dest = (char *)dst;
@@ -31,7 +31,7 @@ void *ft_memccpy(void *dst, const void *src, int c, size_t n)
 		dest++;
 		source++;
 		n--;
-		if(n == 0)
+		if (n == 0)
 			break ;
 	}
 	return (NULL);

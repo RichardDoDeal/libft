@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/05 18:55:59 by mamahali          #+#    #+#             */
+/*   Updated: 2020/11/05 18:55:59 by mamahali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -41,11 +52,15 @@ size_t	get_count_words(char *str, int c)
 
 void	ptr_clean(char **res)
 {
-	while (*res)
+	char **iter;
+
+	iter = res;
+	while (*iter)
 	{
-		free(*res);
-		res++;
+		free(*iter);
+		iter++;
 	}
+	free(res);
 }
 
 char	**ft_split(char const *s, char c)
