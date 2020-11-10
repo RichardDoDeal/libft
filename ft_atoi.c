@@ -6,13 +6,13 @@
 /*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:49:12 by mamahali          #+#    #+#             */
-/*   Updated: 2020/11/05 18:46:03 by mamahali         ###   ########.fr       */
+/*   Updated: 2020/11/10 14:22:33 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*search_end(const char *str)
+static char		*search_end(const char *str)
 {
 	char	*res;
 
@@ -27,7 +27,7 @@ char	*search_end(const char *str)
 	return (res);
 }
 
-int		check_space(int c)
+static int		check_space(int c)
 {
 	if (c == '\f' || c == '\n' || c == '\r'
 			|| c == '\t' || c == '\v' || c == ' ')
@@ -35,7 +35,7 @@ int		check_space(int c)
 	return (0);
 }
 
-int		ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
 	size_t	result;
 	char	*end;

@@ -6,13 +6,13 @@
 /*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 18:55:59 by mamahali          #+#    #+#             */
-/*   Updated: 2020/11/05 18:55:59 by mamahali         ###   ########.fr       */
+/*   Updated: 2020/11/10 14:16:42 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	get_len(char *str, char c)
+static size_t	get_len(char *str, char c)
 {
 	size_t len;
 
@@ -25,7 +25,7 @@ size_t	get_len(char *str, char c)
 	return (len);
 }
 
-char	*skip_splitter_and_get_len(char *str, char c, size_t *len)
+static char		*skip_splitter_and_get_len(char *str, char c, size_t *len)
 {
 	while (*str == c)
 		str++;
@@ -33,9 +33,9 @@ char	*skip_splitter_and_get_len(char *str, char c, size_t *len)
 	return (str);
 }
 
-size_t	get_count_words(char *str, int c)
+static size_t	get_count_words(char *str, int c)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	while (*str)
@@ -50,7 +50,7 @@ size_t	get_count_words(char *str, int c)
 	return (count);
 }
 
-void	ptr_clean(char **res)
+static void		ptr_clean(char **res)
 {
 	char **iter;
 
@@ -63,7 +63,7 @@ void	ptr_clean(char **res)
 	free(res);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char	**res;
 	char	**iter;

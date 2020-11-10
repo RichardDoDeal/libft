@@ -6,7 +6,7 @@
 /*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 19:33:05 by mamahali          #+#    #+#             */
-/*   Updated: 2020/11/05 19:36:41 by mamahali         ###   ########.fr       */
+/*   Updated: 2020/11/10 14:03:56 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,11 @@ int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
-size_t			ft_strlen(char *str);
+size_t			ft_strlen(const char *str);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 char			*ft_strdup(const char *s);
 void			*ft_calloc(size_t nmemb, size_t size);
-int				ft_isspace_bonus(int c);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
