@@ -19,9 +19,9 @@ SRC_BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 				ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 				ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 
-OBJ			= $(SRC:.c=.o)
+OBJ			= $(patsubst %.c,%.o,$(SRC))
 
-OBJ_BONUS	= $(OBJ) $(SRC_BONUS:.c=.o)
+OBJ_BONUS	= $(OBJ) $(patsubst %.c,%.o,$(SRC_BONUS))
 
 CC			= gcc
 
@@ -34,13 +34,11 @@ RM			= rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HNAME)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ_BONUS) $(HNAME)
-	ar rc $(NAME) $(OBJ_BONUS)
-	ranlib $(NAME)
+bonus: $(OBJ) $(OBJ_BONUS)
+	@make OBJ="$(OBJ_BONUS)" all
 
 clean:
 	$(RM) $(OBJ_BONUS)
