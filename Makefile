@@ -34,11 +34,11 @@ RM			= rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+$(NAME): $(OBJ) $(HNAME)
+	ar rcs $(NAME) $?
 
-bonus: $(OBJ) $(OBJ_BONUS)
-	@make OBJ="$(OBJ_BONUS)" all
+bonus: $(OBJ) $(OBJ_BONUS) $(HNAME)
+	@make OBJ="$(OBJ_BONUS)" all --no-print-directory
 
 clean:
 	$(RM) $(OBJ_BONUS)
