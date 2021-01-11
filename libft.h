@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mamahali <mamahali@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 19:33:05 by mamahali          #+#    #+#             */
-/*   Updated: 2020/11/10 14:03:56 by mamahali         ###   ########.fr       */
+/*   Updated: 2021/01/11 18:45:15 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,5 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void
 *));
+void			ft_putstr(char *str);
 #	endif
