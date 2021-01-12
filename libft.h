@@ -6,7 +6,7 @@
 /*   By: mamahali <mamahali@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 19:33:05 by mamahali          #+#    #+#             */
-/*   Updated: 2021/01/11 18:45:15 by mamahali         ###   ########.fr       */
+/*   Updated: 2021/01/12 13:00:13 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,6 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void
 *));
 void			ft_putstr(char *str);
+int				ft_isspace(char c);
+void			ft_skipchr(char **str, char skip);
 #	endif
