@@ -6,12 +6,12 @@
 /*   By: mamahali <mamahali@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 12:59:02 by mamahali          #+#    #+#             */
-/*   Updated: 2021/01/12 13:00:02 by mamahali         ###   ########.fr       */
+/*   Updated: 2021/01/17 12:55:58 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_skipchr(char **str, char skip)
+void	ft_skipchr(char **str, char skip)
 {
-    while((**str) == skip)
-        (*str)++;
+	while ((**str) == skip)
+		(*str)++;
 }

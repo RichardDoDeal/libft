@@ -6,17 +6,17 @@
 /*   By: mamahali <mamahali@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 18:40:26 by mamahali          #+#    #+#             */
-/*   Updated: 2021/01/11 18:45:18 by mamahali         ###   ########.fr       */
+/*   Updated: 2021/01/17 12:55:19 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-    while(*str)
-    {
-        write(1, str, 1);
-        str++;
-    }
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
 }

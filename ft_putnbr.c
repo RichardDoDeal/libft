@@ -6,13 +6,13 @@
 /*   By: mamahali <mamahali@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 17:28:40 by mamahali          #+#    #+#             */
-/*   Updated: 2021/01/13 17:30:03 by mamahali         ###   ########.fr       */
+/*   Updated: 2021/01/17 12:57:47 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr(int num)
+void	ft_putnbr(int num)
 {
-    ft_putnbr_fd(num, 1);
+	ft_putnbr_fd(num, 1);
 }

@@ -6,13 +6,13 @@
 /*   By: mamahali <mamahali@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:03:13 by mamahali          #+#    #+#             */
-/*   Updated: 2021/01/13 15:03:43 by mamahali         ###   ########.fr       */
+/*   Updated: 2021/01/17 12:57:15 by mamahali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
