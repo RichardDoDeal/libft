@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/05 18:54:06 by mamahali          #+#    #+#             */
-/*   Updated: 2020/11/10 15:19:34 by mamahali         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 static int	check_symbol(char c, char *set)
@@ -34,7 +22,7 @@ static char	*go_end(char *start, size_t *len)
 	return (start);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*start;
 	size_t	end_s;

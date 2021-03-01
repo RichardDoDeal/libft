@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mamahali <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 19:57:16 by mamahali          #+#    #+#             */
-/*   Updated: 2020/11/10 12:57:05 by mamahali         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-static int		search_need(const char *hay, char *nd, size_t hay_pos)
+static int	search_need(const char *hay, char *nd, size_t hay_pos)
 {
-	size_t inner_pos;
+	size_t	inner_pos;
 
 	inner_pos = 0;
 	while (*nd)
@@ -29,7 +17,7 @@ static int		search_need(const char *hay, char *nd, size_t hay_pos)
 	return (0);
 }
 
-char			*ft_strnstr(const char *haystack,
+char	*ft_strnstr(const char *haystack,
 		const char *needle, size_t len)
 {
 	char	*hay;

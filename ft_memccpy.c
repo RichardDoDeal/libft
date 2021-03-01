@@ -1,22 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mamahali <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 12:58:07 by mamahali          #+#    #+#             */
-/*   Updated: 2020/11/10 12:57:05 by mamahali         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char *dest;
-	char *source;
-	char sb;
+	char	*dest;
+	char	*source;
+	char	sb;
 
 	if ((dst == NULL && src == NULL) || n == 0)
 		return (NULL);

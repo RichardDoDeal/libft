@@ -14,7 +14,7 @@
 
 static size_t	get_len(char *str, char c)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
 	while (*str && *str != c)
@@ -25,7 +25,7 @@ static size_t	get_len(char *str, char c)
 	return (len);
 }
 
-static char		*skip_splitter_and_get_len(char *str, char c, size_t *len)
+static char	*skip_splitter_and_get_len(char *str, char c, size_t *len)
 {
 	while (*str == c)
 		str++;
@@ -50,9 +50,9 @@ static size_t	get_count_words(char *str, int c)
 	return (count);
 }
 
-static void		ptr_clean(char **res)
+static char	**ptr_clean(char **res)
 {
-	char **iter;
+	char	**iter;
 
 	iter = res;
 	while (*iter)
@@ -61,9 +61,10 @@ static void		ptr_clean(char **res)
 		iter++;
 	}
 	free(res);
+	return (NULL);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	char	**iter;
@@ -75,17 +76,16 @@ char			**ft_split(char const *s, char c)
 		return (NULL);
 	str = (char *)s;
 	count_words = get_count_words(str, c);
-	if (!(res = malloc(sizeof(char *) * (count_words + 1))))
+	res = malloc(sizeof(char *) * (count_words + 1));
+	if (!res)
 		return (NULL);
 	iter = res;
 	while (count_words--)
 	{
 		str = skip_splitter_and_get_len(str, c, &len);
-		if (!(*iter++ = ft_substr(str, 0, len)))
-		{
-			ptr_clean(res);
-			return (NULL);
-		}
+		*iter = ft_substr(str, 0, len);
+		if (!*iter++)
+			return (ptr_clean(res));
 		str += len;
 	}
 	*iter = NULL;

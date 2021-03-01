@@ -1,21 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mamahali <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 13:18:22 by mamahali          #+#    #+#             */
-/*   Updated: 2020/11/10 12:57:05 by mamahali         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *dest;
-	char *source;
+	char	*dest;
+	char	*source;
 
 	if (dst == NULL && src == NULL && len > 0)
 		return (NULL);

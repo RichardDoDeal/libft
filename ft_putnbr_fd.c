@@ -1,41 +1,48 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mamahali <mamahali@student.21-school.ru>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/05 18:52:46 by mamahali          #+#    #+#             */
-/*   Updated: 2021/01/14 15:13:36 by mamahali         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
+
+static int	get_char_number(int rem)
+{
+	int	val;
+
+	if (rem >= 0)
+		val = rem;
+	else
+		val = rem * -1;
+	return (val);
+}
+
+int	zero_func(int num, int fd)
+{
+	if (num == 0)
+	{
+		ft_putstr_fd("0", fd);
+		return (1);
+	}
+	return (0);
+}
 
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	*p_buf;
 	char	buf[12];
 	int		minus;
-	int		temp;
 
 	if (fd < 0)
 		return ;
-	if (n == 0)
-	{
-		ft_putstr_fd("0", fd);
+	if (zero_func(n, fd))
 		return ;
-	}
 	ft_bzero(&buf, 12);
-	minus = n < 0 ? -1 : 0;
+	minus = 0;
+	if (n < 0)
+		minus = -1;
 	p_buf = buf + 10;
 	while (n != 0)
 	{
-		temp = (n % 10) >= 0 ? n % 10 : (n % 10) * -1;
-		*p_buf-- = temp + 48;
+		*p_buf-- = get_char_number(n % 10) + 48;
 		n /= 10;
 	}
-	*p_buf = minus < 0 ? '-' : 0;
+	if (minus < 0)
+		*p_buf = '-';
 	if (*p_buf == 0)
 		p_buf++;
 	ft_putstr_fd(p_buf, fd);

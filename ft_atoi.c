@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mamahali <mamahali@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 14:49:12 by mamahali          #+#    #+#             */
-/*   Updated: 2020/11/10 14:22:33 by mamahali         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-static char		*search_end(const char *str)
+static char	*search_end(const char *str)
 {
 	char	*res;
 
@@ -27,15 +15,21 @@ static char		*search_end(const char *str)
 	return (res);
 }
 
-static int		check_space(int c)
+static int	check_space(int c)
 {
 	if (c == '\f' || c == '\n' || c == '\r'
-			|| c == '\t' || c == '\v' || c == ' ')
+		|| c == '\t' || c == '\v' || c == ' ')
 		return (1);
 	return (0);
 }
 
-int				ft_atoi(const char *str)
+static void	skip_char(const char **str, char c)
+{
+	while (**str == c)
+		*(str) += 1;
+}
+
+int	ft_atoi(const char *str)
 {
 	size_t	result;
 	char	*end;
@@ -48,10 +42,10 @@ int				ft_atoi(const char *str)
 		str++;
 	if (*str == '-' || *str == '+')
 	{
-		minus = *str == '-' ? minus * -1 : minus;
+		if (*str == '-')
+			minus = minus * -1;
 		str++;
-		while (*str == '0')
-			str++;
+		skip_char(&str, '0');
 	}
 	if (!ft_isdigit(*str))
 		return (result);
